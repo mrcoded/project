@@ -409,24 +409,47 @@ line-height: 47px;
 
 .movie-description{
     width: 100%;
-    height: 100vh;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 .container{
   width: 100%;   
-  padding: 30px;
+  height: auto;
   display: flex;
   justify-content: space-between;
 }
+.side-logo {
+    padding: 10px;
+}
+.side-logo h2{
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--movie-card-able);
+}
+
 .side-bar{
     width: 226px;
-    border: 2px solid;
-     height: 982px;
+    border: 1px solid magenta;
      display: flex;
+      border-radius: 0px 45px 45px 0px; 
      flex-direction: column;
      justify-content: space-between;
      text-align: center;
      
 }
+.side-bar-container{
+  border: 1px salmon dashed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 30px;
+} 
 .side h2{
     color: #333333;
     font-size: 24px;
@@ -439,41 +462,54 @@ line-height: 47px;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: 100%;
-    height: 600px;
-    margin-top: 30px;
-   
+    height: 580px;
+    padding: 10px;
+    border: 2px solid navajowhite;
+    
 }
-.side-menu ul li{
+.side-menu ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* height: 300px; */
+    gap: 20px;
+    list-style: none;
+}
+/* .side-menu ul li{
     margin-top: 15px;
    text-decoration: none;
    list-style: none;
    display: flex;
-   justify-content: center;
-   gap: 6px;
+   justify-content: space-between;
    text-align: center;
    align-self: center;
    padding: 10px;
-}
+   border: 2px solid;
+} */
 .side-menu ul li a{
     font-weight: 600;
     font-family: poppins;
     font-size: 20px;
     line-height: 30px;
     color: #666666;
+    gap: 25px;
+    /* padding: 8px; */
 }
 .request{
     border: 1px solid #be123c;
     background: rgba(248, 231, 235, 0.4);
     width: 150px;
     border-radius: 20px;
-    height: 218px;
+    /* height: 218px; */
     align-items: center;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin: 20px;
 }
 .request h3{
     font-size: 15px;
@@ -499,7 +535,8 @@ line-height: 47px;
     background: rgba(190, 18, 60, 0.2);
     opacity: 20px;
     border-radius: 30px;
-    width: 100px;
+    padding: 4px 6px;
+    /* width: 100px; */
 }
 .request a{
      padding: 8px;
@@ -512,4 +549,183 @@ line-height: 47px;
     line-height: 30px;
     color: #666666;
     display: flex;
+}
+
+
+.main-view{
+    border: 2px solid;
+    padding: 30px;
+}
+.main-view-top img{
+   width: 950px;
+    
+}
+.main-view-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: 2px yellow solid;
+    /* width: 900px; */
+    
+}
+.movie-caterogy{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 300px;
+    border: 1px solid;
+    padding-bottom: 10px;
+}
+.preview{
+    display: flex;
+    width: 530px;
+    align-items: center;
+    text-align: start;
+    justify-content: space-between;
+    
+}
+.preview h3{
+    text-align: center;
+    font-size: 20px;
+    line-height: 34.5px;
+    margin-bottom: 8px;
+    color: rgba(64, 64, 64, 1);
+  
+}
+
+.movie-type{
+    color: rgba(185, 28, 28, 1);
+    border: 1px solid rgba(248, 231, 235, 1);
+    border-radius: 15px;
+    font-size: 15px;
+    text-align: center;
+   align-items: center;
+   padding: 2px 8px;
+}
+.movie-title-des{
+    font-size: 18px;
+    /* line-height: 30px; */
+    width: 600px;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 8px;
+
+}
+.movie-info{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding-left: 8px;
+  gap: 8px;
+}
+.movie-info h2{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.movie-info span{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(190, 18, 60, 1);
+    line-height: 24px;
+} 
+.movie-rating{
+    border:  1px solid rgba(199, 199, 199, 1);
+    display: flex;
+    border-radius: 10px;
+    width: 600px;
+}
+.btn-like{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+.btn-like p span{
+    background: rgba(190, 18, 60, 1);
+    border-radius: 10px;
+    padding: 7px 10px;
+    color: white;
+    width: 253px;
+    margin-right: 20px;
+    font-size: 14px;
+}
+.btn-like i{
+    font-size: 16px;
+    text-align: right;
+}
+
+.display-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+    border: 1px solid;
+    height: 300px;
+}
+.first-class{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
+.display-sidebar-rating{
+    display: flex;
+  text-align: center;
+  justify-content: right;
+    width: 300px;
+}
+.display-sidebar-rating p{
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(232, 232, 232, 1);
+  padding-right: 4px;
+}
+.display-sidebar-rating p span{
+  color: #737070;
+  border-left:  2px solid;
+  padding-left: 4px;
+}
+.showtimes {
+    display: flex;
+    background: var(--red);
+    align-items: center;
+    width: 300px;
+    justify-content: center;
+    border-radius: 10px;
+}
+.showtimes a{
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 6px;
+
+}
+.morewatch{
+    display: flex;
+    border: 2px solid rgba(190, 18, 60, 1);
+    align-items: center;
+    background: rgba(190, 18, 60, 0.1);
+    width: 300px;
+    justify-content: center;
+    border-radius: 10px;
+}
+.morewatch a{
+    color: #111827;
+    font-weight: 500;
+    padding: 6px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.display-sidebar img{
+    width: 300px;
+    height: 180px;
+    margin-top: 8px;
 }
