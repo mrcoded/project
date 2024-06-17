@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root{
     --red: #BE123C;
     --footer-black-disable: #6B7280;
@@ -119,14 +121,14 @@ html{
     border-radius: 50%;
     position: relative;
 }
-.icon i{
+.icon span{
  color: white;
  position: absolute;
  justify-content: center;
  text-align: center;
- font-size: 12px;
- right: 8px;
- top: 8px;
+ font-size: 20px;
+top: 2px;
+right: 3px;
 }
 
 
@@ -160,7 +162,7 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 5px;
     font-size: 12px;
     line-height: 12px;
     font-weight: 400;
@@ -251,6 +253,7 @@ html{
     align-items: center;
     justify-content: space-between;
     text-align: center;
+    width: 100%;
 }
 .col-title h3{
 font-weight: 700;
@@ -530,25 +533,22 @@ line-height: 47px;
     
 }
 .side-menu ul{
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 20px;
-    height: 300px;
     gap: 20px;
+    align-content: start;
+    text-align: left;
     list-style: none;
-}
-.side-menu i{
-    color: #666666;
-    font-size: 16px;
+    
 
 }
+
 .side-menu ul li{
    display: flex;
    justify-content: space-between;
    text-align: center;
-   align-self: center;
+   align-self: start;
    padding: 4px;
 }
 .side-menu ul li a{
@@ -558,28 +558,35 @@ line-height: 47px;
     line-height: 20px;
     color: #666666;
     gap: 10px;
+    padding-left: 4px;
+}
+.side-menu ul li span{
+    /* font-size: 18px; */
+    color: #666666;
+    /* box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2); */
+
 }
 
 .request{
     border: 1px solid #be123c;
     background: rgba(248, 231, 235, 0.4);
-    width: 150px;
+    /* width: 130px; */
     border-radius: 20px;
     align-items: center;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     
 }
 .request h3{
-    font-size: 15px;
+    width: 137px;
+    font-size: 14px;
     line-height: 22.5px;
     font-weight: 600;
     font-family: poppins;
     color: #333333;
-    opacity: 80%;
     padding: 10px;
     display: flex;
     text-align: left;
@@ -587,18 +594,25 @@ line-height: 47px;
 .request p{
     font-family: poppins;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 10px;
+    /* line-height: 18px; */
     color: #666666;
-     text-align: left;
-     padding: 10px;
+    text-align: left;
+     padding: 8px;
+     width: 137px;
+     /* border: 1px solid; */
 }
 .cta{
     background: rgba(190, 18, 60, 0.2);
     opacity: 20px;
     border-radius: 30px;
-    padding: 4px 6px;
+    padding: 2px 2px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     /* width: 100px; */
+    line-height: 20px;
+    cursor: pointer;
 }
 
 .request a{
@@ -614,12 +628,12 @@ line-height: 47px;
     color: #666666;
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 25px;
 }
 .log-out i{
     color: #666666;
     font-size: 20px;
-    padding-right: 12px;
+    padding-right: 8px;
 }
 
 
