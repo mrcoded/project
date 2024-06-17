@@ -192,6 +192,7 @@ right: 3px;
 
 .btn{
     /* margin-top: 1rem; */
+    cursor: pointer;
     display: flex;  
     background: var(--red);
     border-radius: .5rem;
@@ -731,6 +732,7 @@ line-height: 47px;
     align-items: center;
     height: 30px;
     width: 100%;
+    cursor: pointer;
 }
 .btn-like-text{
     display: flex;
@@ -806,6 +808,9 @@ line-height: 47px;
     font-weight: 500;
     padding: 6px;
 
+}
+.showtimes i{
+    color: white;
 }
 .morewatch{
     display: flex;
