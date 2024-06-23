@@ -2,54 +2,96 @@
 
  const getBtnValue = document.querySelector('button')
 const form = document.querySelector('.input')
-
+const resultHeading = document.querySelector('.resultHeading')
+const movieResult = document.querySelector('.movie_result')
+let movieImg = document.querySelector('#result_movie_img')
+let movieTitle = document.querySelector('.result_movie_title')
+let movieID = document.querySelector('.result_movie_id')
+let movieRelease = document.querySelector('.result_movie_releaseDate')
+let movieOverview = document.querySelector('.result_movie_overview')
 
 //https://github.com/mrcoded/project
  
 //const output = form.value;
 
  const apiKey = '1834f81129b73b73383a021cd0725af4'
+ const poster = 'https://image.tmdb.org/t/p/original'
 
- async function searchMovie(query){
+//  async function searchMovie(query){
          
-     try {
+//      try {
 
-       const response =  await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}r&api_key=${apiKey}`);
-        console.log(response);
-        const data = await response.json();
-        console.log(data);
+//        const response =  await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`);
+//         console.log(response);
+//         const data = await response.json();
+//         console.log(data);
+//              movieResult.innerHTML = '';
+//              movies.forEach(movie => {
+//                 const {poster_path, id, overview, title} = movie
+                 
+            
+//              });
 
-        if (data.results && data.results.lenght < 0){
-            //process each movie result
-            data.results.forEach(movie => {
-                const {id, title, poster_path, release_date, overview}  = movie;
+       
+
+       
+
+//     }catch(err){
+//         console.log(err);
+//     }
+
+//  }      
+//  searchMovie('home')
+ //https://api.themoviedb.org/3/search/movie?query=home&api_key=1834f81129b73b73383a021cd0725af4
+// pMovie = fetch(`https://image.tmdb.org/t/p/original${result.poster_path}`)
+
+
+function searchMovie(e){
+    e.preventDefault()
+    const query = form.value
+
+    if (query.trim()){
+
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`).then((res) =>
+            res.json())
+        .then((data) => {
+            console.log(data);
+            resultHeading.innerHTML = `search result for ${query}`;
+
+            // if condition is true
+            if(data.results === null){
+                resultHeading.innerHTML = `Oops! no result for ${query}`
                 
-                //const posterUrl = poster_path ? `https://image.tmdb.org/t/p/original${poster_path}`:`https://via.placeholder.com/150`;
-
-                //display the data require
-                console.log(`ID: ${id}`);
-                console.log(`relesde date: ${release_date}`);
-                console.log(`title: ${title}`);
-                console.log(`overview: ${overview}`);
-                console.log(`poster-url: ${poster_path}`);
-            });
-
-        }else{
-            console.log('no movie,  match not found');
-        }
-
-    }catch(err){
-        console.log(err);
+            }else{
+               movieResult.innerHTML = data.results.map((result) =>
+                  
+                `<div id="details">
+                <img src="https://image.tmdb.org/t/p/original${result.poster_path}" id="result_movie_img">
+               <div class="result_movie_title">
+                 ${result.title}
+               </div>
+               <div class="result_movie_id"> ${result.id}</div>
+                <div class="result_movie_releaseDate"> ${result.release_date}</div>
+               <div class="result_movie_overview"> ${result.overview}</div>
+              </div>
+                `
+               )
+             .join()
+            }
+        });
+        //clear input field
+        form.value = '';
+    }else{
+        console.log('please enter movie to search for');
     }
-
 }
 
-function tohandleevent(){
-    const query = document.querySelector('.input').value;
-    searchMovie(query)
+// function tohandleevent(){
+//     const query = document.querySelector('.input').value;
+//     searchMovie(query)
 
-}
- getBtnValue.addEventListener('click', tohandleevent)
+// }
+ getBtnValue.addEventListener('click', searchMovie)
   
 
 //,mn
