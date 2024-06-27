@@ -28,17 +28,20 @@ html{
 .body{
     width: 100%;
     font-family: 'Dmsans', sans-serif;
+    cursor: default;
 }
+
 .main-container{
       opacity: #000 50px;
     background-image: url(img/Screenshot\ of\ wick.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height:95vh;
+    height:98vh;
     display: block;
     padding: 2rem 9%;
     position: relative;
+    cursor: default;
 
 }
 .overlay{
@@ -46,7 +49,7 @@ html{
     top: 0;
     left: 0;
     width: 100%;
-    height: 95vh;
+    height: 98vh;
     background-color: rgba(0, 0, 0, 0.5);
     pointer-events: none;
 }
@@ -61,8 +64,9 @@ html{
     display: flex;
     align-items: center;
     z-index: 1; 
-    position: relative;
+    position:sticky;
     width: 100%;
+    height: auto;
 }
 .logo{
     display: flex;
@@ -89,8 +93,6 @@ html{
     max-width: 600px;
     width: 525px;
     height: 36px;
-    
-    
 }
 .search-box i{
     color: white;
@@ -104,6 +106,7 @@ html{
 .search-box input::placeholder{
     color: white;
     font-family: dm sans;
+    background-color: transparent;
 }
 .menu{
     display: flex;
@@ -114,7 +117,6 @@ html{
     color: white;
     font-family: dm sans;
     font-size: 18px;
-
 }
 .icon{
     background: var(--red);
@@ -125,6 +127,7 @@ html{
     align-items: center;
     border-radius: 50%;
     position: relative;
+    cursor: pointer;
 }
 .icon span{
  color: white;
@@ -159,12 +162,13 @@ right: 3px;
     line-height: 56px;
     font-weight: 700;
     color: white;
+    cursor: default;
 }
 .rating{
     display: flex;
-    justify-content: start;
-    gap: 50px;
-    /* padding-bottom: 15px; */
+    justify-content: space-between;
+    width: 320px;
+    cursor: default;
 }
 .first, .second{
     display: flex;
@@ -188,6 +192,7 @@ right: 3px;
     width: 400px;
     /* padding-bottom: 8px; */
     color: white;
+    cursor: default;
 }
 .first-img{
     width: 40px;
@@ -226,21 +231,17 @@ right: 3px;
     
 }
 .btn:hover{
-    background: '';
-    border: 2px solid ;
+    background: transparent;
+    border: 2px solid #BE123C ;
     color: var(--red);
-    letter-spacing: .1rem;
+    letter-spacing: .03rem;
   
 }
-
-
-
 #article{
     width: 100%;
     height: auto;
     padding: 2rem 8%;
-    
-   
+    cursor: default;   
 }
 .col1,.col2, .col3{
     display: flex;
@@ -301,8 +302,9 @@ line-height: 47px;
     height: auto;
     /* border: 2px solid; */
     margin-top: 10px;
-   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
-
+}
+.movie-card:hover{
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
 .title{
     display: flex;
@@ -394,6 +396,7 @@ line-height: 47px;
     width: 100%;
 }
 #card-rating{
+    width: 220px;
    padding: 0;
    display: flex;
    justify-content: space-between;
@@ -416,13 +419,6 @@ line-height: 47px;
     
 }
 
-
-
-
-
-
-
-
 #footer{
     margin-top: 50px;
     width: 100%;
@@ -431,6 +427,7 @@ line-height: 47px;
     justify-content: center;
     text-align: center;
     /* border: 2px solid; */
+    cursor: default;
 }
 .footer-container{
     width: 492px;
@@ -439,7 +436,6 @@ line-height: 47px;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-   
 }
 .footer-icon{
     display: flex;
@@ -472,8 +468,6 @@ line-height: 47px;
   line-height: 23.44px;
   font-weight: 700;
 }
-
-
 .movie-description{
     display: flex;
     flex-direction: column;
@@ -481,7 +475,7 @@ line-height: 47px;
     margin-bottom: 50px;
     margin-right: 50px;
     justify-content: space-between;
-    
+    cursor: default;
 }
 .container{
   width: 100%;   
@@ -496,7 +490,6 @@ line-height: 47px;
  display: flex;
  align-items: center;
  gap: 6px;
-
 }
 .sidelogo img{
     width: 50px;
@@ -551,8 +544,6 @@ line-height: 47px;
     align-content: start;
     text-align: left;
     list-style: none;
-    
-
 }
 
 .side-menu ul li{
@@ -577,7 +568,6 @@ line-height: 47px;
     /* box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2); */
 
 }
-
 .request{
     border: 1px solid #be123c;
     background: rgba(248, 231, 235, 0.4);
@@ -646,9 +636,6 @@ line-height: 47px;
     font-size: 20px;
     padding-right: 8px;
 }
-
-
-
 .main-view-top img{
    width: 1000px;
    height: 300px;
@@ -680,7 +667,7 @@ line-height: 47px;
   
 }
 
-.preview h3{
+.preview h3 {
     text-align: center;
     font-size: 20px;
     line-height: 24.5px;
@@ -843,455 +830,441 @@ line-height: 47px;
     height: 150px;
     /* margin-top: 8px; */
 }
-
+.all-search-result{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.result_container{
+    flex:  4;
+    display: flex;
+justify-content: center;
+    
+}
 
 
 
 @media screen and (min-width: 920px)and (max-width: 1026px){
-    body{
-        width: 100%;
-    }
-    .main-container{
-        padding: 2rem 5%;
-    }
-    .movie-description{
-        margin: 0;
-    }
-    .container{
-        width: 100%;
-        height: 90vh;
-    }
-    #article{
-        width: 100%;
-        padding: 2rem 4px;
-    }
-    .side-bar{
-        width: 170px;
-    }
-    .side-logo img{
-        width: 40px;
-    }
-    .side-logo h2{
-        font-size: 18px;
-    }
-    .side-menu ul{
-        gap: 10px;
-    }
-    .side-menu ul li a{
-        font-size: 17px;
-    }
-    .side-menu ul li span{
-        font-size: 21px;
-    }
-    .log-out{
-        font-size: 17px;
-    }
-    .main-view{
-        margin-right: 10px;
-        text-align: end;
+body{
+ width: 100%;
+}
+.main-container{
+    padding: 2rem 5%;
+}    
+.movie-description{
+    margin: 0;
+}
+.container{
+    width: 100%;
+    height: 90vh;
+}
+#article{
+    width: 100%;
+    padding: 2rem 4px;
+}
+.side-bar{
+    width: 170px;
+}
+.side-logo img{
+    width: 40px;
+}
+.side-logo h2{
+    font-size: 18px;
+}
+.side-menu ul{
+    gap: 10px;
+}
+.side-menu ul li a{
+    font-size: 17px;
+}
+.side-menu ul li span{
+    font-size: 21px;
+}
+.log-out{
+    font-size: 17px;
+}
+.main-view{
+    margin-right: 10px;
+    text-align: end;
 
-    }
-   
-    .main-view-top img{
-        width: 820px;
-    }
-    .preview{
-        width: 530px;
-        text-align: start;
-    }
-    .movie-title-des,
-     .movie-info{
-        width: 570px;
-        text-align: start;
-    }
-    .movie-rating{
-        width: 570px;
-        text-align: start;        
-    }
-    .display-sidebar-rating,
-    .showtimes, .morewatch,
-    .display-sidebar img{
-        width: 220px;
-        text-align: start;
-    }
+}
+
+.main-view-top img{
+    width: 820px;
+}
+.preview{
+    width: 530px;
+    text-align: start;
+}
+.movie-title-des,
+ .movie-info{
+    width: 570px;
+    text-align: start;
+}
+.movie-rating{
+    width: 570px;
+    text-align: start;        
+}
+.display-sidebar-rating,
+.showtimes, .morewatch,
+.display-sidebar img{
+    width: 220px;
+    text-align: start;
+}   
 }
 
 @media screen and (min-width: 500px)and (max-width: 775px){
-    body{
-        width: 100%;
-    }
-    .main-container{
-        padding: 1rem 5%;
-    }
-    .nav-bar{
-        border: 1px yellow solid;
-        /* margin-right: 20px; */
-    }
-    .search{
-        display: none;
-    }
-    .menu h4{
-        display: none;
-    }
-    .search-small{
-        display: flex;
-        color: white;
-        cursor: pointer;
-    }
-    .main h1{
-        font-size: 43px;
-        line-height: 48px;
-    }
-    .first, .second{
-        font-size: 10px;
-    }
-    .main p{
+body{
+   width: 100%;
+}
+.main-container, .overlay{
+    padding: 1rem 5%;
+    max-height: 75vh;
+}
+.nav-bar{
+    border: 1px yellow solid;
+    /* margin-right: 20px; */
+}
+.search{
+    display: none;
+}
+.menu h4{
+    display: none;
+}
+.search-small{
+    display: flex;
+    color: white;
+    cursor: pointer;
+}
+.main h1{
+    font-size: 43px;
+    line-height: 48px;
+}
+.first, .second{
+    font-size: 10px;
+}
+.main p{
+font-size: 16px;
+}
+.remove-small-screen{
+    display: none;
+}
+.first-img{
+    width: 34px;
+    height: 30px;
+}
+.second-img{
+    width: 25px;
+    height: 20px;
+}
+.btn{
+    width: 150px;
+    height: 30px;
+}
+.btn a, i{
+  font-size: 12px;
+}
+#article{
+    padding: 1rem 5%;
+}
+.col1,.col2, .col3{
+  margin: 8px;   
+}
+.col-title h3{
+    font-size: 28px;
+}
+.left p{
     font-size: 16px;
-    }
-    .first-img{
-        width: 34px;
-        height: 30px;
-    }
-    .second-img{
-        width: 25px;
-        height: 20px;
-    }
-    .btn{
-        width: 150px;
-        height: 30px;
-    }
-    .btn a, i{
-      font-size: 12px;
-    }
-    #article{
-        padding: 1rem 5%;
-    }
-    .col1,.col2, .col3{
-      margin: 8px;   
-    }
-    .col-title h3{
-        font-size: 28px;
-    }
-    .left p{
-        font-size: 16px;
-    }
-   
-    .footer-icon i{
-        font-size: 20px;
-    }
-    .footer-links h5{
-        font-size: 16px;
-    }
-    .footer-links{
-        gap: 1px;
-        justify-content: space-around;
-    }
-    .footer-text p{
-        font-size: 15px;
-    }
-    .side-bar{
-        display: none;
-    }
-
-
-
-
-
-
-
-
-
-    .movie-description{
-        margin: 0;
-    }
-    .container{
-        width: 100%;
-        height: 90vh;
-    }
-    #article{
-        width: 100%;
-        padding: 2rem 4px;
-    }
-    /* .side-bar{
-        width: 170px;
-    }
-    .side-logo img{
-        width: 40px;
-    }
-    .side-logo h2{
-        font-size: 18px;
-    }
-    .side-menu ul{
-        gap: 10px;
-    }
-    .side-menu ul li a{
-        font-size: 17px;
-    }
-    .side-menu ul li span{
-        font-size: 21px;
-    }
-    .log-out{
-        font-size: 17px;
-    } */
-    .main-view{
-        width: 100%;
-       padding: 10px;
-
-    }
-   
-    .main-view-top img{
-        width: 750px;
-    }
-    .movie-type{
-        font-size: 13px;
-        /* padding: 2px 10px; */
-        line-height: 20px;
-        border-radius: 30px;
-    }
-    .preview{
-        width: 500px;
-        text-align: start;
-        align-items: center;
-    }
-    .preview h3{
-        font-size: 18px;
-    }
-    .movie-title-des p{
-        font-size: 14px;
-    }
-    .movie-info h2{
-        font-size: 17px;
-    }
-    .movie-info span{
-        font-size: 16px;
-    }
-    .btn-like p{
-        font-size: 13px;
-    }
-    .btn-like p span{
-        font-size: 13px;
-        padding: 9px 10px;
-    }
-
-    .movie-title-des,
-     .movie-info{
-        width: 490px;
-        text-align: start;
-    }
-    .movie-rating{
-        width: 490px;
-        text-align: start;        
-    }
-
-    .display-sidebar-rating,
-    .showtimes, .morewatch,
-    .display-sidebar img{
-        width: 210px;
-        text-align: start;
-    }
 }
 
-@media screen and (min-width: 325px)and (max-width: 430px){
-    body{
-        width: 100%;
-    }
-    .main-container{
-        padding: 1rem 5%;
-    }
-    .nav-bar{
-        border: 1px yellow solid;
-        /* margin-right: 20px; */
-        width: 100%;
-    }
-    .logo{
-        gap: 5px;
-    }
-    .logo h2{
-        font-size: 12px;
-    }
-    .logo img{
-        width: 30px;
-    }
-    .search{
-        display: none;
-    }
-    .menu h4{
-        display: none;
-    }
-    .search-small{
-        display: flex;
-        color: white;
-        cursor: pointer;
-    }
-    .main{
-        top: 60px;
-        width: 250px;
-    }
-    .main h1{
-        font-size: 26px;
-        line-height: 28px;
-        width: 180px;
-    }
-    .movie-card{
-        margin-left: -4px;
-        margin-right: -4px;
-        width: 200px;
-        margin-bottom: 6px;
-    }
-    .move-card-img img{
-        width: 200px;
-        /* height: 190px; */
-    }
-    
-    .first, .second{
-        font-size: 6px;
-    }
-    .rating{
-        width: 100px;
-    }
-    .main p{
-    font-size: 10px;
-    line-height: 10px;
+.footer-icon i{
+    font-size: 20px;
+}
+.footer-links h5{
+    font-size: 16px;
+}
+.footer-links{
+    gap: 1px;
+    justify-content: space-around;
+}
+.footer-text p{
+    font-size: 15px;
+}
+.side-bar{
+    display: none;
+}
+.movie-description{
+    margin: 0;
+}
+.container{
+    width: 100%;
+    height: 90vh;
+}
+#article{
+    width: 100%;
+    padding: 2rem 4px;
+}
+.main-view{
+    width: 100%;
+   padding: 10px;
+
+}
+
+.main-view-top img{
+    width: 750px;
+}
+.movie-type{
+    font-size: 13px;
+    /* padding: 2px 10px; */
+    line-height: 20px;
+    border-radius: 30px;
+}
+.preview{
+    width: 500px;
+    text-align: start;
+    align-items: center;
+}
+.preview h3{
+    font-size: 18px;
+}
+.movie-title-des p{
+    font-size: 14px;
+}
+.movie-info h2{
+    font-size: 17px;
+}
+.movie-info span{
+    font-size: 16px;
+}
+.btn-like p{
+    font-size: 13px;
+}
+.btn-like p span{
+    font-size: 13px;
+    padding: 9px 10px;
+}
+
+.movie-title-des,
+ .movie-info{
+    width: 490px;
+    text-align: start;
+}
+.movie-rating{
+    width: 490px;
+    text-align: start;        
+}
+
+.display-sidebar-rating,
+.showtimes, .morewatch,
+.display-sidebar img{
+    width: 210px;
+    text-align: start;
+}    
+}
+
+@media screen and (min-width: 300px)and (max-width: 430px){
+body{
+    width: 100%;
+}
+.main-container, .overlay{
+    padding: 1rem 5%;
+    height:  75vh;
+}
+.nav-bar{
+    border: 1px yellow solid;
+    /* margin-right: 20px; */
+    width: 100%;
+}
+.logo{
+    gap: 5px;
+}
+.logo h2{
+    font-size: 12px;
+}
+.logo img{
+    width: 30px;
+}
+.search{
+    display: none;
+}
+.menu h4{
+    display: none;
+}
+.search-small{
+    display: flex;
+    color: white;
+    cursor: pointer;
+}
+.main{
+    top: 20px;
+    width: 250px;
+}
+.main h1{
+    font-size: 26px;
+    line-height: 28px;
     width: 180px;
-    }
-    .first-img{
-        width: 25px;
-        height: 20px;
-    }
-    .second-img{
-        width: 16px;
-        height: 12px;
-    }
-    .btn{
-        width: 90px;
-        height: 20px;
-        line-height: 8px;
-        padding: 2px;
-        gap: 4px;
-        align-items: center;
-        text-align: center;
-    }
-    .btn a, i{
-        align-items: center;
-        text-align: center;
-      font-size: 8px;
-    }
-    #article{
-        padding: 2rem 9%;
-    }
-    .side-bar{
-        display: none;
-    }
-    .movie-description{
-        margin: 0;
-    }
-    .container{
-        width: 100%;
-        height: 90vh;
-    }
-    #article{
-        width: 100%;
-        padding: 2rem 4px;
-    }
-    .main-view{
-        width: 100%;
-       padding: 10px;
+}
+.remove-small-screen{
+    display: none;
+}
+.movie-card{
+    margin-left: -4px;
+    margin-right: -4px;
+    width: 130px;
+    margin-bottom: 6px;
+}
+.movie_result img{
+    width: 130px;
+    height: 190px;
+}
 
-    }
-    .col1,.col2, .col3{
-        padding: 0;
-        margin: 0;
-    }
-    .col-title{
-        padding: 10px;
-    }
-    .col-title h3{
-        font-size: 12px;
-    }
-    .left{
-        gap: 2px;
-    }
-    .left p{
-        font-size: 10px;
-    }
-    .footer-container{
-        width: 350px;
-    }
-   
-    .footer-icon i{
-        font-size: 18px;
-    }
-    .footer-links h5{
-        font-size: 14px;
-    }
-    .footer-links{
-        gap: 1px;
-        justify-content: space-around;
-    }
-    .footer-text p{
-        font-size: 13px;
-    }
-  
-    .main-view-bottom{
-        border: 1px green solid;
-        flex-direction: column;
-        margin: 0;
-    }
-    .main-view-top img{
-        width: 407px;
-        height: 200px;
-    }
-    .movie-type{
-        font-size: 13px;
-        /* padding: 2px 10px; */
-        line-height: 20px;
-        border-radius: 30px;
-    }
-    .preview{
-        width: 100%;
-        text-align: start;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0;
-    }
-  
-    .preview h3{
-        font-size: 14px;
-    }
-    .movie-title-des p{
-        font-size: 14px;
-        width: 100%;
-    }
-    .movie-info h2{
-        font-size: 14px;
-    }
-    .movie-info span{
-        font-size: 12px;
-    }
-   .movie-rating{
-    width: 390px;
-   }
-    .btn-like p{
-        font-size: 12px;
-    }
-    .btn-like p span{
-        font-size: 12px;
-        padding: 9px 10px;
-    }
-   
+.first, .second{
+    font-size: 6px;
+}
+.rating{
+    width: 100px;
+}
+.main p{
+font-size: 10px;
+line-height: 10px;
+width: 180px;
+}
+.first-img{
+    width: 20px;
+    height: 15px;
+}
+.card-second img{
+    width: 12px;
+    height: 8px;
+}
+.btn{
+    width: 90px;
+    height: 20px;
+    line-height: 8px;
+    padding: 2px;
+    gap: 4px;
+    align-items: center;
+    text-align: center;
+}
+.btn a, i{
+    align-items: center;
+    text-align: center;
+  font-size: 8px;
+}
+#article{
+    padding: 2rem 9%;
+}
+.side-bar{
+    display: none;
+}
+.movie-description{
+    margin: 0;
+}
+.container{
+    width: 100%;
+    height: 90vh;
+}
+#article{
+    width: 100%;
+    padding: 2rem 4px;
+}
+.main-view{
+    width: 100%;
+   padding: 10px;
 
-    .movie-title-des,
-     .movie-info{
-        width: 490px;
-        text-align: start;
-    }
-   
+}
+.col1,.col2, .col3{
+    padding: 0;
+    margin: 0;
+}
+.col-title{
+    padding: 10px;
+}
+.col-title h3{
+    font-size: 12px;
+}
+.left{
+    gap: 2px;
+}
+.left p{
+    font-size: 10px;
+}
+.movie-card-description p{
+    font-size: 8px;
+}
+.footer-container{
+    width: 350px;
+}
 
-    .display-sidebar-rating,
-    .showtimes, .morewatch,
-    .display-sidebar img{
-        width: 100px;
-        text-align: start;
-    }
-   
+.footer-icon i{
+    font-size: 18px;
+}
+.footer-links h5{
+    font-size: 14px;
+}
+.footer-links{
+    gap: 1px;
+    justify-content: space-around;
+}
+.footer-text p{
+    font-size: 13px;
+}
+.main-view-bottom{
+    border: 1px green solid;
+    flex-direction: column;
+    margin: 0;
+}
+.main-view-top img{
+    width: 407px;
+    height: 200px;
+}
+.movie-type{
+    font-size: 13px;
+    /* padding: 2px 10px; */
+    line-height: 20px;
+    border-radius: 30px;
+}
+.preview{
+    width: 100%;
+    text-align: start;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+}
+
+.preview h3{
+    font-size: 14px;
+}
+.movie-title-des p{
+    font-size: 14px;
+    width: 100%;
+}
+.movie-info h2{
+    font-size: 14px;
+}
+.movie-info span{
+    font-size: 12px;
+}
+.movie-rating{
+width: 390px;
+}
+.btn-like p{
+    font-size: 12px;
+}
+.btn-like p span{
+    font-size: 12px;
+    padding: 9px 10px;
+}
+.movie-title-des,
+ .movie-info{
+    width: 490px;
+    text-align: start;
+}
+.display-sidebar-rating,
+.showtimes, .morewatch,
+.display-sidebar img{
+    width: 100px;
+    text-align: start;
+}
 }
