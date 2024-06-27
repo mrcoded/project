@@ -60,7 +60,7 @@ function searchMovie(e){
 
  getBtnValue.addEventListener('click', searchMovie)
   
-
+//what
 
 function playById(e){
     e.preventDefault()
@@ -128,8 +128,8 @@ async function playFromTmbd(e) {
 const movieList = document.querySelector('.movie-list');
 const mainViewToPlay = document.querySelector('.main-view')
 
-movieList.addEventListener('click', function() {
+// movieList.addEventListener('click', function() {
 
-    mainViewToPlay.style.display = 'block'
+//     mainViewToPlay.style.display = 'block'
 
-})
+// })
