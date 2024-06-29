@@ -382,13 +382,12 @@ line-height: 47px;
     justify-content: space-between;
     padding: 4px;
  }
-
-.current{
+.current, .result_movie_releaseDate,.result_movie_id{
     color: #9ca3af;
     font-size: 12px;
     line-height: 16px;
 }
-.movie-card-description h4{
+.movie-card-description h4, .result_movie_title{
     font-size: 16px;
     line-height: 15px;
     font-weight: 700;
@@ -836,11 +835,20 @@ line-height: 47px;
     flex-wrap: wrap;
     flex-direction: column;
 }
-.result_container{
-    flex:  4;
-    display: flex;
-justify-content: center;
-    
+.result-container{
+     display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.result-container img{
+    width: 270px;
+    height: 320px;
+}
+.all-search-result{
+ display: grid;
+ gap: 0;
+ grid-template-columns: repeat(4, 1fr);
+ background-color: #6B7280;
 }
 
 
@@ -1114,10 +1122,7 @@ body{
     width: 130px;
     margin-bottom: 6px;
 }
-.movie_result img{
-    width: 130px;
-    height: 190px;
-}
+
 
 .first, .second{
     font-size: 6px;
