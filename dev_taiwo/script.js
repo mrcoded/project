@@ -4,24 +4,71 @@
 const input = document.querySelector('.input')
 const resultHeading = document.querySelector('.resultHeading')
 const movieResult = document.querySelector('.all-search-result')
-let movieImg = document.querySelector('#result_movie_img')
-let movieTitle = document.querySelector('.result_movie_title')
-let movieID = document.querySelector('.result_movie_id')
-let movieRelease = document.querySelector('.result_movie_releaseDate')
-let movieOverview = document.querySelector('.result_movie_overview')
-let movieTrailer = document.querySelector('.moviePlay')
+let moviedisplayDetailes = document.querySelector('.moviedisplayDetailes')
 let playBtn = document.querySelector('.btn-toplay')
-const moviecontainer = document.querySelector('.result.container');
-const mainViewToPlay = document.querySelector('.main-view')
+const nextPage = document.querySelector('.movie-description')
+const previewOverview = document.querySelector('.preview-overview')
+
+
+
+const apiKey = '1834f81129b73b73383a021cd0725af4'
+const maxNumber = 16;
+
+trending()
+
+async function trending(){
+    try{
+         
+        const url = (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&append_to_response=videos,images`)
+
+        const response = await fetch(url);
+        const data = await response.json();
+            console.log(data);
+               
+            movieResult.innerHTML = data.results.map((result) => 
+
+            `
+              <div class="movie">
+                <a href="http://127.0.0.1:5500/project/dev_taiwo/index2.html?movie_id=${result.id}">
+                <img src="https://image.tmdb.org/t/p/original${result.poster_path}" id="result_movie_img">
+                <div class="result_info">  <div class="result_movie_releaseDate"> ${result.release_date}</div>
+                <div class="result_movie_id"> ${result.id}</div>
+                </div>    </a> 
+                <div class="result_movie_title"><h4>${result.title}</h4></div>
+                    <div class="rating" id="card-rating">
+                        <div class="first card-first">
+                            <img src="img/imbd.png" class="first-img">
+                            82.0/100
+                        </div>
+                        <div class="second card-second">
+                            <img src="img/apple.png" class="second-img">
+                            70%
+                        </div>
+                    </div>
+                    <div class="title">
+                    <p class="bg hidden">TV SERIES</p>
+                    <div class="circle">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+                </div> 
+                </div>`
+                
+
+            )               
+
+    }
+    catch(error){
+        console.log('error fetching data');
+    }
+      
+}
 
 
 
 
 function searchMovie(e){
     e.preventDefault()
-
-     const apiKey = '1834f81129b73b73383a021cd0725af4'
-     const maxSearch = 8;
  
      // to get the search value
     const query = input.value
@@ -64,9 +111,9 @@ function searchMovie(e){
 
  //getBtnValue.addEventListener('click', searchMovie)
   
-playBtn.addEventListener('click', playFromTmbd)
+//playBtn.addEventListener('click', playFromTmbd)
 
-//playFromTmbd (' 343611', '1834f81129b73b73383a021cd0725af4')
+
 async function playFromTmbd(e) {
     e.preventDefault();
         const  movie_id = '343611'
@@ -94,39 +141,12 @@ async function playFromTmbd(e) {
 }
 
 
-function toGetInfo (e) {
-    e.preventDefault()
-    const query = input.value
-    const apiKey = '1834f81129b73b73383a021cd0725af4'
-    
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`).then((res) =>
-        res.json())
-    
-    .then((data) => {
-        console.log(data);
-        resultHeading.innerHTML = `search result for ${query}`;
 
-        
-        if(data.results === null){
-            resultHeading.innerHTML = `Oops! no result for ${query}`
-            
-        }else{
-            movieResult.innerHTML = data.results.map((result) => 
-       
-                  
-               `  <div class="movie" onclick="pickID()">
-                    <img src="https://image.tmdb.org/t/p/original${result.poster_path}" id="result_movie_img">
-                    <div class="result_movie_id"> ${result.id}</div>
-                     <div class="result_movie_releaseDate"> ${result.release_date}</div>
-                     <div class="result_movie_title"><h4>${result.title}</h4></div>
-                </div>`
-            
-               
 
-            )
-
-            input.value = '';
-            async function pickID(){
+//getBtnValue.addEventListener('click', toGetInfo)
+//code to play the movie by id
+/*
+ async function pickID(){
 
              const  id = data.results[0].id
              const api_key = '1834f81129b73b73383a021cd0725af4'
@@ -152,16 +172,54 @@ function toGetInfo (e) {
              
             }
             pickID()
-            
-        }
-        }).catch(error => {
-                console.error('error',error);
-    })
-            
-        
+*/
+/*
+function moviedisplayDetailes(){
+    document.querySelector('.movie').addEventListener('click', function () {
+        l
+        moviedisplayDetailes.innerHTML = data.results.map((result) =>` 
+            <div>
+                
+                <img src="https://image.tmdb.org/t/p/original${result.poster_path}" id="result_movie_img"></img>
 
+                <div class="title-description">
+                    <div class="result_movie_title"><h4>${result.title}</h4></div>
+                    <div class="result_movie_releaseDate">${result.release_date}</div>
+                 </div>
 
-}
-
-getBtnValue.addEventListener('click', toGetInfo)
-
+                 <div class="result_movie_overview">${result.overview}</div>
+                 <div class="result_directors">
+                    <p>Directors: <span>${result.directors}</span></p>
+                    <p>Writer:<span>${result.writer}</span></p>
+                    <p>Star:<span>${result.star}</span></p>
+                 </div>
+            </div> `
+        )
+    }) 
+ 
+}*/
+// `  <div class="movie">
+// <a href="http://127.0.0.1:5500/project/dev_taiwo/index2.html" target="_blank">
+// <img src="https://image.tmdb.org/t/p/original${result.poster_path}" id="result_movie_img">
+// <div class="result_info">  <div class="result_movie_releaseDate"> ${result.release_date}</div>
+// <div class="result_movie_id"> ${result.id}</div>
+// </div>    </a> 
+// <div class="result_movie_title"><h4>${result.title}</h4></div>
+//       <div class="rating" id="card-rating">
+//         <div class="first card-first">
+//             <img src="img/imbd.png" class="first-img">
+//             82.0/100
+//         </div>
+//         <div class="second card-second">
+//             <img src="img/apple.png" class="second-img">
+//             70%
+//         </div>
+//     </div>
+//      <div class="title">
+//     <p class="bg hidden">TV SERIES</p>
+//     <div class="circle">
+//         <i class="fa-solid fa-heart"></i>
+//     </div>
+// </div>
+// </div> 
+// </div>`
