@@ -14,27 +14,27 @@ async function fetchMovieDetails(movieId) {
         const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos,images`;
         const response = await fetch(url);
         const movie = await response.json();
-       // console.log(movie);
-        movieImg.innerHTML= ` <div>
+       console.log(movie);
+
+       movieImg.innerHTML= ` <div class = "main-view-topimg">
          <img src="https://image.tmdb.org/t/p/original${movie.poster_path}" id="result_movie_img">
             </div>`
 
         title.innerHTML= `${movie.title}`
         overview.innerHTML=`${movie.overview}`
+        movieDate.innerHTML= `${movie.release_date.substring(0, 4)}`
 
-       
-       // movieDate.innerHTML= getYear(`${movie.release_date}`)
     
-
-        
     } catch (error) {
         console.log('Error fetching movie details:', error);
     }
 
    
 }
+fetchMovieDetails(786892)
 
-// Retrieve movie_id from the URL query parameter
+
+//Retrieve movie_id from the URL query parameter
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('movie_id');
 
@@ -57,7 +57,7 @@ play.addEventListener('click', function() {
                if (trailerkey){
                    window.open(`https://www.youtube.com/watch?v=${trailerkey}`, '_blank')
                }else{
-                   console.log('NO trailer found for this movie');
+                   alert('NO trailer found for this movie');
                }
     }).catch(error =>{
         console.log('error', error);
